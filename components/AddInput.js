@@ -58,7 +58,7 @@ const AddInput = ({ setData, id, initData = { name: "", members: [] } }) => {
         [`${id}`]: { name: input, members: selectedTeammates },
       };
     });
-  }, [selectedTeammates, setSelectedTeammates, input, setInput]);
+  }, [selectedTeammates, input]);
 
   return (
     <div className="flex w-full gap-4 mt-3">
