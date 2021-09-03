@@ -49,9 +49,10 @@ const AddInput = ({ setData, id, initData = { name: "", members: [] } }) => {
   const [input, setInput] = useState(initData?.name);
   const [oneData, setOneData] = useState(initData);
 
-  console.log("onedata", oneData);
+  // console.log("onedata", oneData);
+  console.log('init',initData);
   useEffect(() => {
-    if (!input || !selectedTeammates) return;
+    if (!input || selectedTeammates === []) return;
     setData((prev) => {
       return {
         ...prev,

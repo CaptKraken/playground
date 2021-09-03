@@ -6,28 +6,48 @@ import { v4 as uuid } from "uuid";
 
 
 const data1 = [
-  // {
-  //   name: "frontend ",
-  //   members: [
-  //     { value: 3, label: "Devon Webb" },
-  //     { value: 2, label: "Arlene Mccoy" },
-  //     { value: 7, label: "Caroline Schultz" },
-  //   ],
-  // },
-  // {
-  //   name: "backend",
-  //   members: [
-  //     { value: 3, label: "Devon Webb" },
-  //     { value: 5, label: "Tanya Fox" },
-  //   ],
-  // },
-  // {
-  //   name: "design",
-  //   members: [
-  //     { value: 3, label: "Devon Webb" },
-  //     { value: 5, label: "Tanya Fox" },
-  //   ],
-  // },
+  {
+      id: 'e3b78856-bab8-48ea-98e6-5c560d9ba036',
+      name:"Frontend Developers",
+      members:[
+        {
+          value:1,
+          label:"Wade Cooper"
+        },
+        {
+          value:3,
+          label:"Devon Webb"
+        }
+      ]
+  },
+  {
+    id:  "d609f94d-4f0a-4452-8840-34e8598ce890",
+    name:"Backend Developers",
+    members:[
+      {
+        value:6,
+        label:"Hellen Schmidt"
+      },
+      {
+        value:8,
+        label:"Mason Heaney"
+      },
+      {
+        value:9,
+        label:"Claudie Smitham"
+      }
+    ]
+  },
+    
+    {
+      id:"6fc643a5-469d-407d-b9ad-b1a319e6541e",
+      name:"UI/UX Designers",
+      members:[
+        {value:2,label:"Arlene Mccoy"}
+        ,{value:5,label:"Tanya Fox"}
+      ]
+    }
+  
 ];
 
 
@@ -47,17 +67,13 @@ export default function Home() {
   };
 
   useEffect(() => {
-    data?.map((team) => {
-      console.log(team);
-
+    data.map((team) => {
       setInputList((prev) => {
-        
-      const id = uuid()
         return [...prev, <AddInput
-          key={id}
+          key={team.id}
           initData={team}
           setData={setData}
-          id={id}
+          id={team.id}
         />];
       });
     });
